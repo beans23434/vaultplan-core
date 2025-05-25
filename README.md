@@ -40,6 +40,8 @@ ln -sf $(pwd)/vaultplan.py ~/.local/bin/vaultplan
 5. **Run CLI help:**
 ```bash
 vaultplan --help
+
+Dokt forget to set yoir API key inside config.json if using Etherscan!!
 ```
 
 ---
