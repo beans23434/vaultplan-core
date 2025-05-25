@@ -23,9 +23,6 @@ from utils.config import load_config
 from Web3.web3_sync import web3_sync  # adjust path as needed
 from commands.summary_web3 import summary_web3
 from commands.export_summaries import export_summary
-from commands.wizard import wizard
-from ai import app as ai_app
-from signals.Reddit import app as reddit_app
 
 app = typer.Typer(help="VaultPlan - Your personal finance command center")
 console = Console()
@@ -84,9 +81,6 @@ app.command("list-notes")(list_notes)
 app.command("web3-sync")(web3_sync)
 app.command("summary-web3")(summary_web3)
 app.command("export-summary")(export_summary)
-app.command("wizard")(wizard)
-app.add_typer(ai_app, name="AI")
-app.add_typer(reddit_app, name="reddit")  # Reddit subcommands
 
 @app.command("doctor")
 def doctor():
