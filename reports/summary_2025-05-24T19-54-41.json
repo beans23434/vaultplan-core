@@ -1,0 +1,189 @@
+{
+  "total_income": 749.03,
+  "total_expenses": 518.81,
+  "web3": [],
+  "recent_activity": [
+    {
+      "date": "2025-05-24",
+      "amount": -59.62,
+      "type": "Expense",
+      "desc": "TakeOut: Being fat +  shared will come back",
+      "account": "Savings"
+    },
+    {
+      "date": "2025-05-24",
+      "amount": -33.4,
+      "type": "Expense",
+      "desc": "Shops: Smokes",
+      "account": "Savings"
+    },
+    {
+      "date": "2025-05-24",
+      "amount": 70.0,
+      "type": "Income",
+      "desc": "schoolpants",
+      "account": "Savings"
+    },
+    {
+      "date": "2025-05-23",
+      "amount": -75.0,
+      "type": "Expense",
+      "desc": "School: Pants",
+      "account": "Savings"
+    },
+    {
+      "date": "2025-05-23",
+      "amount": -51.97,
+      "type": "Expense",
+      "desc": "Shopping: sigh",
+      "account": "Savings"
+    },
+    {
+      "date": "2025-05-23",
+      "amount": 250.0,
+      "type": "Income",
+      "desc": "Transfer from Savings",
+      "account": "CryptoExchange"
+    },
+    {
+      "date": "2025-05-23",
+      "amount": 75.0,
+      "type": "Income",
+      "desc": "wood",
+      "account": "Pocket"
+    },
+    {
+      "date": "2025-05-22",
+      "amount": -14.3,
+      "type": "Expense",
+      "desc": "Grocceries: Coke, Apples, cheese",
+      "account": "Pocket"
+    },
+    {
+      "date": "2025-05-22",
+      "amount": 75.0,
+      "type": "Income",
+      "desc": "wood",
+      "account": "Pocket"
+    },
+    {
+      "date": "2025-05-21",
+      "amount": -37.27,
+      "type": "Expense",
+      "desc": "Shops: ",
+      "account": "Savings"
+    },
+    {
+      "date": "2025-05-21",
+      "amount": -25.0,
+      "type": "Expense",
+      "desc": "goal: Goal: #1",
+      "account": "Savings"
+    },
+    {
+      "date": "2025-05-21",
+      "amount": -25.0,
+      "type": "Expense",
+      "desc": "transfer: Transfer to Savings",
+      "account": "Pocket"
+    },
+    {
+      "date": "2025-05-21",
+      "amount": -28.6,
+      "type": "Expense",
+      "desc": "essentials: burger patties, toilet paper, cones, iced tea",
+      "account": "Pocket"
+    },
+    {
+      "date": "2025-05-21",
+      "amount": -3.0,
+      "type": "Expense",
+      "desc": "goal: Goal: #1",
+      "account": "Savings"
+    },
+    {
+      "date": "2025-05-21",
+      "amount": 75.0,
+      "type": "Income",
+      "desc": "wood",
+      "account": "Pocket"
+    },
+    {
+      "date": "2025-05-21",
+      "amount": 25.0,
+      "type": "Income",
+      "desc": "Transfer from Pocket",
+      "account": "Savings"
+    },
+    {
+      "date": "2025-05-21",
+      "amount": 377.3,
+      "type": "Income",
+      "desc": "Centerlink",
+      "account": "Savings"
+    },
+    {
+      "date": "2025-05-20",
+      "amount": -130.0,
+      "type": "Expense",
+      "desc": "Servo: ",
+      "account": "Savings"
+    },
+    {
+      "date": "2025-05-20",
+      "amount": -5.65,
+      "type": "Expense",
+      "desc": "Servo: ",
+      "account": "Savings"
+    },
+    {
+      "date": "2025-05-20",
+      "amount": -30.0,
+      "type": "Expense",
+      "desc": "transfer: Transfer to Pocket",
+      "account": "Savings"
+    },
+    {
+      "date": "2025-05-20",
+      "amount": 0.73,
+      "type": "Income",
+      "desc": "intial",
+      "account": "Everyday"
+    },
+    {
+      "date": "2025-05-20",
+      "amount": 1.0,
+      "type": "Income",
+      "desc": "intial",
+      "account": "Everyday"
+    },
+    {
+      "date": "2025-05-20",
+      "amount": 75.0,
+      "type": "Income",
+      "desc": "wood",
+      "account": "Savings"
+    },
+    {
+      "date": "2025-05-20",
+      "amount": 30.0,
+      "type": "Income",
+      "desc": "Transfer from Savings",
+      "account": "Pocket"
+    }
+  ],
+  "transfers": [
+    {
+      "date": "2025-05-23",
+      "amount": 1.0,
+      "from": "Savings",
+      "to": "Pocket"
+    },
+    {
+      "date": "2025-05-23",
+      "amount": 70.0,
+      "from": "Pocket",
+      "to": "Savings"
+    }
+  ]
+}

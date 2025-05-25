@@ -1,0 +1,380 @@
+{
+  "timestamp": "2025-05-24T18:16:41.942897",
+  "mode": "full",
+  "since": "2000-01-01",
+  "accounts": [
+    {
+      "name": "Savings",
+      "type": "bank",
+      "balance": 467.05999999999995
+    },
+    {
+      "name": "Everyday",
+      "type": "bank",
+      "balance": 1.73
+    },
+    {
+      "name": "TermLockedJun",
+      "type": "bank",
+      "balance": 2143.07
+    },
+    {
+      "name": "Rabby",
+      "type": "wallet",
+      "balance": 0.0
+    },
+    {
+      "name": "Goals",
+      "type": "bank",
+      "balance": 0.0
+    },
+    {
+      "name": "Pocket",
+      "type": "cash",
+      "balance": 118.1
+    },
+    {
+      "name": "CryptoExchange",
+      "type": "bank",
+      "balance": 25.0
+    }
+  ],
+  "current_balance": 2754.96,
+  "growth": {
+    "total_income": 984.03,
+    "total_expense": 496.79,
+    "net_growth": 487.23999999999995
+  },
+  "goals": [
+    {
+      "id": 1,
+      "name": "#1",
+      "target_amount": 100.0,
+      "saved_amount": 28.0,
+      "deadline": null,
+      "account": "bank",
+      "priority": 1,
+      "note": "First goal?",
+      "status": "active",
+      "progress": 0.28
+    },
+    {
+      "id": 2,
+      "name": "test",
+      "target_amount": 1.0,
+      "saved_amount": 1.0,
+      "deadline": "",
+      "account": "",
+      "priority": 1,
+      "note": "",
+      "status": "completed",
+      "progress": 1.0
+    },
+    {
+      "id": 3,
+      "name": "test",
+      "target_amount": 1.0,
+      "saved_amount": 1.0,
+      "deadline": "",
+      "account": "",
+      "priority": 1,
+      "note": "",
+      "status": "completed",
+      "progress": 1.0
+    }
+  ],
+  "debits": [
+    {
+      "id": 1,
+      "label": "Phone",
+      "amount_due": 100.0,
+      "account": "Savings",
+      "due_date": null,
+      "created_at": "2025-05-21",
+      "paid": 0.0,
+      "status": "pending",
+      "note": "Low Piority",
+      "progress": 0.0
+    }
+  ],
+  "recent": {
+    "income": [
+      {
+        "id": 3,
+        "account": "Everyday",
+        "amount": 0.73,
+        "source": "intial",
+        "date": "2025-05-20"
+      },
+      {
+        "id": 4,
+        "account": "Everyday",
+        "amount": 1.0,
+        "source": "intial",
+        "date": "2025-05-20"
+      },
+      {
+        "id": 5,
+        "account": "Savings",
+        "amount": 75.0,
+        "source": "wood",
+        "date": "2025-05-20"
+      },
+      {
+        "id": 6,
+        "account": "Pocket",
+        "amount": 30.0,
+        "source": "Transfer from Savings",
+        "date": "2025-05-20"
+      },
+      {
+        "id": 7,
+        "account": "Pocket",
+        "amount": 75.0,
+        "source": "wood",
+        "date": "2025-05-21"
+      },
+      {
+        "id": 8,
+        "account": "Savings",
+        "amount": 25.0,
+        "source": "Transfer from Pocket",
+        "date": "2025-05-21"
+      },
+      {
+        "id": 9,
+        "account": "Savings",
+        "amount": 377.3,
+        "source": "Centerlink",
+        "date": "2025-05-21"
+      },
+      {
+        "id": 10,
+        "account": "Pocket",
+        "amount": 75.0,
+        "source": "wood",
+        "date": "2025-05-22"
+      },
+      {
+        "id": 11,
+        "account": "CryptoExchange",
+        "amount": 250.0,
+        "source": "Transfer from Savings",
+        "date": "2025-05-23"
+      },
+      {
+        "id": 12,
+        "account": "Pocket",
+        "amount": 75.0,
+        "source": "wood",
+        "date": "2025-05-23"
+      }
+    ],
+    "expenses": [
+      {
+        "id": 3,
+        "account": "Savings",
+        "amount": 130.0,
+        "category": "Servo",
+        "description": "",
+        "date": "2025-05-20",
+        "note": "",
+        "metadata": "[\"Electric Bill and coke\"]"
+      },
+      {
+        "id": 4,
+        "account": "Savings",
+        "amount": 5.65,
+        "category": "Servo",
+        "description": "",
+        "date": "2025-05-20",
+        "note": "",
+        "metadata": "[]"
+      },
+      {
+        "id": 5,
+        "account": "Savings",
+        "amount": 30.0,
+        "category": "transfer",
+        "description": "Transfer to Pocket",
+        "date": "2025-05-20",
+        "note": null,
+        "metadata": null
+      },
+      {
+        "id": 6,
+        "account": "Savings",
+        "amount": 37.27,
+        "category": "Shops",
+        "description": "",
+        "date": "2025-05-21",
+        "note": "",
+        "metadata": "[]"
+      },
+      {
+        "id": 7,
+        "account": "Savings",
+        "amount": 25.0,
+        "category": "goal",
+        "description": "Goal: #1",
+        "date": "2025-05-21",
+        "note": null,
+        "metadata": null
+      },
+      {
+        "id": 8,
+        "account": "Pocket",
+        "amount": 25.0,
+        "category": "transfer",
+        "description": "Transfer to Savings",
+        "date": "2025-05-21",
+        "note": null,
+        "metadata": null
+      },
+      {
+        "id": 10,
+        "account": "Pocket",
+        "amount": 28.6,
+        "category": "essentials",
+        "description": "burger patties, toilet paper, cones, iced tea",
+        "date": "2025-05-21",
+        "note": "",
+        "metadata": "[]"
+      },
+      {
+        "id": 11,
+        "account": "Savings",
+        "amount": 3.0,
+        "category": "goal",
+        "description": "Goal: #1",
+        "date": "2025-05-21",
+        "note": null,
+        "metadata": null
+      },
+      {
+        "id": 12,
+        "account": "Pocket",
+        "amount": 14.3,
+        "category": "Grocceries",
+        "description": "Coke, Apples, cheese",
+        "date": "2025-05-22",
+        "note": "schol.. me",
+        "metadata": "[]"
+      },
+      {
+        "id": 13,
+        "account": "Savings",
+        "amount": 75.0,
+        "category": "School",
+        "description": "Pants",
+        "date": "2025-05-23",
+        "note": "",
+        "metadata": "[]"
+      },
+      {
+        "id": 15,
+        "account": "Savings",
+        "amount": 1.0,
+        "category": "__transfer__",
+        "description": "Transfer to Pocket",
+        "date": "2025-05-23",
+        "note": null,
+        "metadata": null
+      },
+      {
+        "id": 16,
+        "account": "Pocket",
+        "amount": 70.0,
+        "category": "__transfer__",
+        "description": "Transfer to Savings",
+        "date": "2025-05-23",
+        "note": null,
+        "metadata": null
+      },
+      {
+        "id": 17,
+        "account": "Savings",
+        "amount": 51.97,
+        "category": "Shopping",
+        "description": "sigh",
+        "date": "2025-05-23",
+        "note": "sigh i know steaks were a mistake and idk still 39$ without steaks...",
+        "metadata": "[]"
+      }
+    ],
+    "transfers": [
+      {
+        "id": 5,
+        "account": "Savings",
+        "amount": 30.0,
+        "category": "transfer",
+        "description": "Transfer to Pocket",
+        "date": "2025-05-20",
+        "note": null,
+        "metadata": null
+      },
+      {
+        "id": 8,
+        "account": "Pocket",
+        "amount": 25.0,
+        "category": "transfer",
+        "description": "Transfer to Savings",
+        "date": "2025-05-21",
+        "note": null,
+        "metadata": null
+      },
+      {
+        "id": 15,
+        "account": "Savings",
+        "amount": 1.0,
+        "category": "__transfer__",
+        "description": "Transfer to Pocket",
+        "date": "2025-05-23",
+        "note": null,
+        "metadata": null
+      },
+      {
+        "id": 16,
+        "account": "Pocket",
+        "amount": 70.0,
+        "category": "__transfer__",
+        "description": "Transfer to Savings",
+        "date": "2025-05-23",
+        "note": null,
+        "metadata": null
+      }
+    ],
+    "notes": [
+      {
+        "id": 1,
+        "mood": 10,
+        "text": null,
+        "tags": "[]",
+        "date": null,
+        "note": "Hopefull at what my skills, learning annd mmindset has gotten too and will become.",
+        "account": null,
+        "created_at": "2025-05-22 09:09:15"
+      },
+      {
+        "id": 2,
+        "mood": 3,
+        "text": null,
+        "tags": "[]",
+        "date": null,
+        "note": "Hmmm 6 days sinfe new lifestyle habits and changes. didnt dribk for 3 days then had a sibgle drinknnext 3 inn n a row. desire to change is growing stronger. Habits to cleanan and do more growing. still feel doomed.",
+        "account": null,
+        "created_at": "2025-05-22 18:37:43"
+      },
+      {
+        "id": 3,
+        "mood": 7,
+        "text": null,
+        "tags": "[]",
+        "date": null,
+        "note": "optimistic about gumroad i think?",
+        "account": null,
+        "created_at": "2025-05-23 13:23:43"
+      }
+    ]
+  }
+}

@@ -1,0 +1,452 @@
+{
+  "timestamp": "2025-05-24T13:50:20.409380",
+  "weekly": {
+    "income": [
+      [
+        3,
+        "Everyday",
+        0.73,
+        "intial",
+        "2025-05-20"
+      ],
+      [
+        4,
+        "Everyday",
+        1.0,
+        "intial",
+        "2025-05-20"
+      ],
+      [
+        5,
+        "Savings",
+        75.0,
+        "wood",
+        "2025-05-20"
+      ],
+      [
+        6,
+        "Pocket",
+        30.0,
+        "Transfer from Savings",
+        "2025-05-20"
+      ],
+      [
+        7,
+        "Pocket",
+        75.0,
+        "wood",
+        "2025-05-21"
+      ],
+      [
+        8,
+        "Savings",
+        25.0,
+        "Transfer from Pocket",
+        "2025-05-21"
+      ],
+      [
+        9,
+        "Savings",
+        377.3,
+        "Centerlink",
+        "2025-05-21"
+      ],
+      [
+        10,
+        "Pocket",
+        75.0,
+        "wood",
+        "2025-05-22"
+      ],
+      [
+        11,
+        "CryptoExchange",
+        250.0,
+        "Transfer from Savings",
+        "2025-05-23"
+      ],
+      [
+        12,
+        "Pocket",
+        75.0,
+        "wood",
+        "2025-05-23"
+      ]
+    ],
+    "expenses": [
+      [
+        3,
+        "Savings",
+        130.0,
+        "Servo",
+        "",
+        "2025-05-20",
+        "",
+        "[\"Electric Bill and coke\"]"
+      ],
+      [
+        4,
+        "Savings",
+        5.65,
+        "Servo",
+        "",
+        "2025-05-20",
+        "",
+        "[]"
+      ],
+      [
+        5,
+        "Savings",
+        30.0,
+        "transfer",
+        "Transfer to Pocket",
+        "2025-05-20",
+        null,
+        null
+      ],
+      [
+        6,
+        "Savings",
+        37.27,
+        "Shops",
+        "",
+        "2025-05-21",
+        "",
+        "[]"
+      ],
+      [
+        7,
+        "Savings",
+        25.0,
+        "goal",
+        "Goal: #1",
+        "2025-05-21",
+        null,
+        null
+      ],
+      [
+        8,
+        "Pocket",
+        25.0,
+        "transfer",
+        "Transfer to Savings",
+        "2025-05-21",
+        null,
+        null
+      ],
+      [
+        10,
+        "Pocket",
+        28.6,
+        "essentials",
+        "burger patties, toilet paper, cones, iced tea",
+        "2025-05-21",
+        "",
+        "[]"
+      ],
+      [
+        11,
+        "Savings",
+        3.0,
+        "goal",
+        "Goal: #1",
+        "2025-05-21",
+        null,
+        null
+      ],
+      [
+        12,
+        "Pocket",
+        14.3,
+        "Grocceries",
+        "Coke, Apples, cheese",
+        "2025-05-22",
+        "schol.. me",
+        "[]"
+      ],
+      [
+        13,
+        "Savings",
+        75.0,
+        "School",
+        "Pants",
+        "2025-05-23",
+        "",
+        "[]"
+      ],
+      [
+        15,
+        "Savings",
+        1.0,
+        "__transfer__",
+        "Transfer to Pocket",
+        "2025-05-23",
+        null,
+        null
+      ],
+      [
+        16,
+        "Pocket",
+        70.0,
+        "__transfer__",
+        "Transfer to Savings",
+        "2025-05-23",
+        null,
+        null
+      ],
+      [
+        17,
+        "Savings",
+        51.97,
+        "Shopping",
+        "sigh",
+        "2025-05-23",
+        "sigh i know steaks were a mistake and idk still 39$ without steaks...",
+        "[]"
+      ]
+    ],
+    "notes": [
+      [
+        1,
+        10,
+        null,
+        "[]",
+        null,
+        "Hopefull at what my skills, learning annd mmindset has gotten too and will become.",
+        null,
+        "2025-05-22 09:09:15"
+      ],
+      [
+        2,
+        3,
+        null,
+        "[]",
+        null,
+        "Hmmm 6 days sinfe new lifestyle habits and changes. didnt dribk for 3 days then had a sibgle drinknnext 3 inn n a row. desire to change is growing stronger. Habits to cleanan and do more growing. still feel doomed.",
+        null,
+        "2025-05-22 18:37:43"
+      ],
+      [
+        3,
+        7,
+        null,
+        "[]",
+        null,
+        "optimistic about gumroad i think?",
+        null,
+        "2025-05-23 13:23:43"
+      ]
+    ],
+    "goals": [],
+    "debits": []
+  },
+  "since_last_export": {
+    "income": [],
+    "expenses": [],
+    "notes": [],
+    "goals": [],
+    "debits": []
+  },
+  "latest": {
+    "accounts": [
+      [
+        1,
+        "Savings",
+        "bank",
+        467.05999999999995,
+        null
+      ],
+      [
+        2,
+        "Everyday",
+        "bank",
+        1.73,
+        null
+      ],
+      [
+        3,
+        "TermLockedJun",
+        "bank",
+        2143.07,
+        null
+      ],
+      [
+        4,
+        "Rabby",
+        "wallet",
+        0.0,
+        "0x5cf9235ec24f19af7f4100199eb73248796192ef"
+      ],
+      [
+        6,
+        "Goals",
+        "bank",
+        0.0,
+        null
+      ],
+      [
+        7,
+        "Pocket",
+        "cash",
+        118.1,
+        null
+      ],
+      [
+        8,
+        "CryptoExchange",
+        "bank",
+        25.0,
+        null
+      ]
+    ],
+    "income": [
+      [
+        11,
+        "CryptoExchange",
+        250.0,
+        "Transfer from Savings",
+        "2025-05-23"
+      ],
+      [
+        12,
+        "Pocket",
+        75.0,
+        "wood",
+        "2025-05-23"
+      ],
+      [
+        10,
+        "Pocket",
+        75.0,
+        "wood",
+        "2025-05-22"
+      ]
+    ],
+    "expenses": [
+      [
+        13,
+        "Savings",
+        75.0,
+        "School",
+        "Pants",
+        "2025-05-23",
+        "",
+        "[]"
+      ],
+      [
+        15,
+        "Savings",
+        1.0,
+        "__transfer__",
+        "Transfer to Pocket",
+        "2025-05-23",
+        null,
+        null
+      ],
+      [
+        16,
+        "Pocket",
+        70.0,
+        "__transfer__",
+        "Transfer to Savings",
+        "2025-05-23",
+        null,
+        null
+      ]
+    ],
+    "goals": [
+      [
+        2,
+        "test",
+        1.0,
+        1.0,
+        "",
+        "",
+        1,
+        "",
+        "completed"
+      ],
+      [
+        3,
+        "test",
+        1.0,
+        1.0,
+        "",
+        "",
+        1,
+        "",
+        "completed"
+      ],
+      [
+        1,
+        "#1",
+        100.0,
+        28.0,
+        null,
+        "bank",
+        1,
+        "First goal?",
+        "active"
+      ]
+    ],
+    "notes": [
+      [
+        3,
+        7,
+        null,
+        "[]",
+        null,
+        "optimistic about gumroad i think?",
+        null,
+        "2025-05-23 13:23:43"
+      ],
+      [
+        2,
+        3,
+        null,
+        "[]",
+        null,
+        "Hmmm 6 days sinfe new lifestyle habits and changes. didnt dribk for 3 days then had a sibgle drinknnext 3 inn n a row. desire to change is growing stronger. Habits to cleanan and do more growing. still feel doomed.",
+        null,
+        "2025-05-22 18:37:43"
+      ],
+      [
+        1,
+        10,
+        null,
+        "[]",
+        null,
+        "Hopefull at what my skills, learning annd mmindset has gotten too and will become.",
+        null,
+        "2025-05-22 09:09:15"
+      ]
+    ],
+    "debits": [
+      [
+        1,
+        "Phone",
+        100.0,
+        "Savings",
+        null,
+        "2025-05-21",
+        0.0,
+        "pending",
+        "Low Piority"
+      ]
+    ],
+    "mood_trend": [
+      [
+        7,
+        "2025-05-23 13:23:43"
+      ],
+      [
+        3,
+        "2025-05-22 18:37:43"
+      ],
+      [
+        10,
+        "2025-05-22 09:09:15"
+      ]
+    ]
+  }
+}
