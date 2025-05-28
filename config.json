@@ -1,0 +1,9 @@
+{
+  "etherscan_api_key": "Etherscan API Key Here",
+  "etherscan_chains": [
+    1,
+    42161,
+    10
+  ],
+      "display_currency": "USD",
+}
