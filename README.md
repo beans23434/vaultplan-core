@@ -5,8 +5,6 @@
 
 📝 Updated README.md
 
-Here’s the structure we’ll focus on:
-
 
 ---
 
