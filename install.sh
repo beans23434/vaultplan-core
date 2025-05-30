@@ -5,6 +5,12 @@ echo "[*] Installing VaultPlan..."
 INSTALL_DIR="$HOME/.vaultplan"
 BIN_DIR="$HOME/.local/bin"
 SRC_DIR="$(pwd)"
+DEPENDENCIES="python-pip sqlite git"
+
+# Install dependencies
+pkg update -y
+apt install $DEPENDENCIES -y
+pip install -r requirements.txt
 
 # Create necessary dirs
 mkdir -p "$INSTALL_DIR/data"
