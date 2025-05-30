@@ -120,7 +120,23 @@ To update VaultPlan, simply re-run the install.sh to sync any changes.
 
 If you face permission issues on Termux, use chmod +x to ensure the vaultplan.py script is executable.
 
+---
 
+Quick tool to calculate loose coins based on your total wallet cash.
+
+vaultplan coins check 55
+
+> If your full wallet is $80, this tells you the $25 difference is coins.
+
+You’ll get:
+
+🧠 Coin Mode Result
+🎯 Action: HOLD
+💬 Message: Coins $25.00 not yet at $50 threshold. No deposit triggered.
+
+🧠 Coin Mode Result
+🎯 Action: HOLD
+💬 Message: Coins $25.00 not yet at $50 threshold. No deposit triggered.
 
 ---
 
