@@ -41,7 +41,7 @@ ln -sf $(pwd)/vaultplan.py ~/.local/bin/vaultplan
 ```bash
 vaultplan --help
 ```
-
+---
 ## Core Commands
 
 ### Accounts
@@ -112,7 +112,7 @@ also need to add a free etherscan api key to use.
 vaultplan web3-sync <- will sync all etherscan v2 normal transactions and erc20 transactions for any accounts with a wallet address linked.
 vaultplan summary-web3 <-- will disolay a very bare bones summmary of erc20 and normal transactions and what they are worth in USD.
 ```
-
+---
 ## Notes:
 
 The `install.sh` script will move all necessary files to the `~/.vaultplan/ directory`.
@@ -148,7 +148,7 @@ vaultplan coins check 55
 
 VaultPlan was built during grief, poverty, and recovery — coded on a phone, logged by need.
 To support or unlock premium modes: VaultPlan on Gumroad
-
+---
 ## 🛠️ Troubleshooting:
 
 If you encounter permission issues, run:
@@ -161,3 +161,4 @@ If installation fails, ensure you have the required dependencies installed:
 pkg install python-pip git sqlite
 pip install typer rich
 ```
+---
