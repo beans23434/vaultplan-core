@@ -23,6 +23,7 @@ from commands.summary_web3 import summary_web3
 from commands.export_summaries import export_summary
 from Web3.web3_sync import web3_sync
 from commands import todo
+from commands import coins
 
 currency = get_display_currency()
 
@@ -57,6 +58,7 @@ app.command("web3-sync")(web3_sync)
 app.command("summary-web3")(summary_web3)
 app.command("export-summary")(export_summary)
 app.add_typer(todo.todo_app, name="todo")
+app.add_typer(coins.app, name="coins")
 
 @app.command("doctor")
 def doctor():
