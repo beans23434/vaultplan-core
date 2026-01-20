@@ -1,10 +1,10 @@
 import requests
-from utils.helpers import get_config
+from utils.config import load_config
 from datetime import datetime
 from datetime import datetime
 
 def fetch_token_transfers(address, tokens, chain_id=1, from_block=None):
-    api_key = get_config().get("etherscan_api_key")
+    api_key = load_config().get("etherscan_api_key")
     if not api_key:
         print("[ERROR] Missing Etherscan API key in config.json")
         return []

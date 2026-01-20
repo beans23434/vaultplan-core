@@ -1,9 +1,8 @@
 # clear_tables.py
 
 import sqlite3
-from pathlib import Path
 
-DB_PATH = Path.home() / "vaultplan" / "data" / "vaultplan.db"
+from utils.paths import DB_PATH
 
 TABLES = [
     "accounts",
@@ -48,14 +47,13 @@ SCHEMAS = {
     "goals": """
         CREATE TABLE IF NOT EXISTS goals (
             id INTEGER PRIMARY KEY,
-            title TEXT,
+            name TEXT,
             target_amount REAL,
-            current_amount REAL DEFAULT 0,
-            account TEXT,
-            priority INTEGER,
+            saved_amount REAL DEFAULT 0,
             deadline TEXT,
+            account TEXT,
+            priority INTEGER DEFAULT 3,
             note TEXT,
-            created_at TEXT,
             status TEXT DEFAULT 'active'
         )
     """,
@@ -63,13 +61,11 @@ SCHEMAS = {
         CREATE TABLE IF NOT EXISTS debits (
             id INTEGER PRIMARY KEY,
             label TEXT,
-            amount REAL,
-            account TEXT,
+            amount_due REAL,
+            amount_paid REAL DEFAULT 0,
             due_date TEXT,
-            note TEXT,
-            paid REAL DEFAULT 0,
-            created_at TEXT,
-            status TEXT DEFAULT 'pending'
+            account TEXT,
+            status TEXT DEFAULT 'open'
         )
     """,
     "notes": """
@@ -77,7 +73,9 @@ SCHEMAS = {
             id INTEGER PRIMARY KEY,
             mood INTEGER,
             note TEXT,
-            timestamp TEXT
+            account TEXT,
+            tags TEXT,
+            created_at TEXT
         )
     """
 }

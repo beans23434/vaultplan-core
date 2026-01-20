@@ -1,9 +1,7 @@
 # utils/config.py
 import json
-from pathlib import Path
 
-# point at the project root next to vaultplan.py
-CONFIG_PATH = Path(__file__).resolve().parent.parent / "config.json"
+from utils.paths import CONFIG_PATH
 
 def load_config() -> dict:
     try:

@@ -1,8 +1,7 @@
 # utils/db_init.py
 import sqlite3
-from pathlib import Path
 
-DB_PATH = Path(__file__).parent.parent / "data" / "vaultplan.db"
+from utils.paths import DB_PATH
 
 def init_tables():
     conn = sqlite3.connect(DB_PATH)
@@ -44,15 +43,14 @@ def init_tables():
     c.execute("""
         CREATE TABLE IF NOT EXISTS goals (
             id INTEGER PRIMARY KEY,
-            title TEXT,
+            name TEXT,
             target_amount REAL,
-            current_amount REAL DEFAULT 0,
+            saved_amount REAL DEFAULT 0,
+            deadline TEXT,
             account TEXT,
-            priority INTEGER,
-            status TEXT DEFAULT 'active',
-            created_at TEXT,
+            priority INTEGER DEFAULT 3,
             note TEXT,
-            deadline TEXT
+            status TEXT DEFAULT 'active'
         )
     """)
 
@@ -61,12 +59,10 @@ def init_tables():
             id INTEGER PRIMARY KEY,
             label TEXT,
             amount_due REAL,
-            account TEXT,
+            amount_paid REAL DEFAULT 0.0,
             due_date TEXT,
-            created_at TEXT,
-            paid REAL DEFAULT 0,
-            status TEXT DEFAULT 'pending',
-            note TEXT
+            account TEXT,
+            status TEXT DEFAULT 'open'
         )
     """)
 
@@ -104,14 +100,14 @@ def init_tables():
     c.execute("""
         CREATE TABLE IF NOT EXISTS web3_transactions (
             date TEXT,
-            type TEXT, -- “income” or “expense”
+            tx_type TEXT,
             symbol TEXT,
             amount_token REAL,
-            price_at_time REAL,
-            value_aud REAL,
+            value_fiat REAL,
             account TEXT,
             description TEXT,
-            hash TEXT UNIQUE
+            hash TEXT,
+            PRIMARY KEY(hash, account)
         )
     """)
 

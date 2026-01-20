@@ -9,8 +9,9 @@ from rich.console import Console
 from rich.panel import Panel
 from rich.table import Table
 
-from utils.config import get_display_currency, load_config
-from utils.db_init import init_tables, DB_PATH
+from utils.config import get_display_currency
+from utils.db_init import init_tables
+from utils.paths import DB_PATH
 from commands.account import create_account, transfer_funds
 from commands.income import add_income
 from commands.expense import add_expense
@@ -30,7 +31,6 @@ currency = get_display_currency()
 app = typer.Typer(help="VaultPlan - Your personal finance command center")
 console = Console()
 
-DB_PATH = Path.home() / ".vaultplan" / "data" / "vaultplan.db"
 # Initialize database tables
 init_tables()
 
@@ -73,6 +73,9 @@ def doctor():
             if "value_aud" in col_names and "value_fiat" not in col_names:
                 c.execute("ALTER TABLE web3_transactions RENAME COLUMN value_aud TO value_fiat")
                 console.print("[yellow]⏎ Renamed:[/] web3_transactions.value_aud → value_fiat")
+            if "type" in col_names and "tx_type" not in col_names:
+                c.execute("ALTER TABLE web3_transactions RENAME COLUMN type TO tx_type")
+                console.print("[yellow]⏎ Renamed:[/] web3_transactions.type → tx_type")
     except Exception as e:
         console.print(f"[red]⚠ Column rename failed:[/] {e}")
 
@@ -83,7 +86,11 @@ def doctor():
         "notes": {"mood": "INTEGER", "note": "TEXT", "account": "TEXT", "tags": "TEXT", "created_at": "TEXT"},
         "goals": {"name": "TEXT", "target_amount": "REAL", "saved_amount": "REAL", "deadline": "TEXT", "account": "TEXT", "priority": "INTEGER", "note": "TEXT", "status": "TEXT"},
         "debits": {"label": "TEXT", "amount_due": "REAL", "amount_paid": "REAL", "due_date": "TEXT", "account": "TEXT", "status": "TEXT"},
-        "web3_transactions": {"tx_type": "TEXT", "symbol": "TEXT", "amount_token": "REAL", "value_fiat": "REAL", "date": "TEXT"}
+        "web3_transactions": {"tx_type": "TEXT", "symbol": "TEXT", "amount_token": "REAL", "value_fiat": "REAL", "account": "TEXT", "description": "TEXT", "hash": "TEXT", "date": "TEXT"}
+    }
+    rename_map = {
+        "goals": {"title": "name", "current_amount": "saved_amount"},
+        "debits": {"paid": "amount_paid"},
     }
     with sqlite3.connect(DB_PATH) as conn:
         c = conn.cursor()
@@ -94,6 +101,16 @@ def doctor():
             if table in tables:
                 c.execute(f"PRAGMA table_info({table})")
                 existing_cols = {row[1] for row in c.fetchall()}
+                if table in rename_map:
+                    for old_col, new_col in rename_map[table].items():
+                        if old_col in existing_cols and new_col not in existing_cols:
+                            try:
+                                c.execute(f"ALTER TABLE {table} RENAME COLUMN {old_col} TO {new_col}")
+                                console.print(f"[yellow]⏎ Renamed:[/] {table}.{old_col} → {new_col}")
+                            except Exception as e:
+                                console.print(f"[red]Failed to rename {table}.{old_col}:[/] {e}")
+                    c.execute(f"PRAGMA table_info({table})")
+                    existing_cols = {row[1] for row in c.fetchall()}
                 for col, col_type in expected_cols.items():
                     if col not in existing_cols:
                         console.print(f"[yellow]Missing column in {table}:[/] {col} — Adding...")
@@ -103,6 +120,30 @@ def doctor():
                             console.print(f"[red]Failed to add {col} to {table}:[/] {e}")
             else:
                 console.print(f"[red]Table not found:[/] {table}")
+
+@app.command("update")
+def update():
+    """Update VaultPlan by pulling latest code and re-running install.sh."""
+    console.print(Panel("Updating VaultPlan (git pull + install)..."))
+    repo_dir = Path.cwd()
+    try:
+        subprocess.run(["git", "-C", str(repo_dir), "pull"], check=True)
+    except Exception as e:
+        console.print(f"[red]git pull failed:[/] {e}")
+        raise typer.Exit(code=1)
+
+    install_script = repo_dir / "install.sh"
+    if not install_script.exists():
+        console.print(f"[red]install.sh not found in {repo_dir}[/red]")
+        raise typer.Exit(code=1)
+
+    try:
+        subprocess.run(["bash", str(install_script)], check=True)
+    except Exception as e:
+        console.print(f"[red]install.sh failed:[/] {e}")
+        raise typer.Exit(code=1)
+
+    console.print("[green]✓ Update complete. Data/config preserved under ~/.vaultplan.[/green]")
 
 if __name__ == "__main__":
     app()

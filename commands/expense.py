@@ -1,17 +1,10 @@
 import typer
-from pathlib import Path
-import sqlite3
 from datetime import datetime
-from utils.helpers import ensure_data_dir
 import json
 
-app = typer.Typer()
+from utils.helpers import get_db
 
-def get_db():
-    ensure_data_dir()
-    db_path = Path(__file__).parent.parent / "data" / "vaultplan.db"
-    conn = sqlite3.connect(db_path)
-    return conn
+app = typer.Typer()
 
 @app.command()
 def add_expense(
@@ -33,43 +26,42 @@ def add_expense(
     except json.JSONDecodeError:
         items = []
     
-    conn = get_db()
-    c = conn.cursor()
-    
-    # Create tables if they don't exist
-    c.execute("""
-        CREATE TABLE IF NOT EXISTS expenses (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            amount REAL,
-            category TEXT,
-            description TEXT,
-            account TEXT,
-            date TEXT,
-            note TEXT,
-            metadata TEXT
+    with get_db() as conn:
+        c = conn.cursor()
+
+        # Create tables if they don't exist
+        c.execute("""
+            CREATE TABLE IF NOT EXISTS expenses (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                amount REAL,
+                category TEXT,
+                description TEXT,
+                account TEXT,
+                date TEXT,
+                note TEXT,
+                metadata TEXT
+            )
+        """)
+
+        # Insert expense
+        c.execute(
+            """INSERT INTO expenses 
+               (amount, category, description, account, date, note, metadata) 
+               VALUES (?, ?, ?, ?, ?, ?, ?)""",
+            (clean_amount, category, description, account, date, note, json.dumps(items))
         )
-    """)
-    
-    # Insert expense
-    c.execute(
-        """INSERT INTO expenses 
-           (amount, category, description, account, date, note, metadata) 
-           VALUES (?, ?, ?, ?, ?, ?, ?)""",
-        (clean_amount, category, description, account, date, note, json.dumps(items))
-    )
-    
-    # Update account balance
-    c.execute(
-        "UPDATE accounts SET balance = balance - ? WHERE name = ?",
-        (clean_amount, account)
-    )
-    
-    conn.commit()
-    conn.close()
+
+        # Update account balance
+        c.execute(
+            "UPDATE accounts SET balance = balance - ? WHERE name = ?",
+            (clean_amount, account)
+        )
+
+        conn.commit()
     
     # Format output
     items_str = f" ({', '.join(items)})" if items else ""
     note_str = f"\n📝 Note: {note}" if note else ""
     
     typer.echo(f"🧾 Expense of ${clean_amount:.2f} logged to '{account}' ({category}: {description}){items_str}.{note_str}")
-    typer.echo("�� Balance updated.") 
+    typer.echo("✅ Balance updated.") 

@@ -58,7 +58,7 @@ def show_summary(days: int = typer.Option(30, help="Days to look back for recent
 
         # Web3 transaction totals
         try:
-            c.execute("SELECT tx_type, COUNT(*), SUM(amount_aud) FROM web3_transactions GROUP BY tx_type")
+            c.execute("SELECT tx_type, COUNT(*), SUM(value_fiat) FROM web3_transactions GROUP BY tx_type")
             rows = c.fetchall()
             if rows:
                 tx_table = Table(title="Web3 Transaction Totals")
@@ -152,8 +152,8 @@ def summary_export(
             pass
 
         try:
-            c.execute("SELECT tx_type, COUNT(*), SUM(amount_aud) FROM web3_transactions GROUP BY tx_type")
-            output["web3"] = [{"type": r[0], "count": r[1], "total_aud": r[2] or 0.0} for r in c.fetchall()]
+            c.execute("SELECT tx_type, COUNT(*), SUM(value_fiat) FROM web3_transactions GROUP BY tx_type")
+            output["web3"] = [{"type": r[0], "count": r[1], "total_fiat": r[2] or 0.0} for r in c.fetchall()]
         except:
             pass
 

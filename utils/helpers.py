@@ -1,11 +1,10 @@
-from pathlib import Path
 import os
 import sqlite3
 import requests
 import json
 from datetime import datetime
 
-DB_PATH = Path.home() / ".vaultplan" / "data" / "vaultplan.db"
+from utils.paths import DB_PATH, CONFIG_PATH
 
 def get_token_prices(symbols: list[str]) -> dict:
     """
@@ -48,6 +47,3 @@ def get_config():
     if CONFIG_PATH.exists():
         return json.loads(CONFIG_PATH.read_text())
     return {}
-
-def get_display_currency():
-    return get_config().get("display_currency", "AUD")

@@ -114,9 +114,13 @@ Notes:
 
 The install.sh script will move all necessary files to the ~/.vaultplan/ directory.
 
-The config.json and vaultplan.db will be located inside ~/.vaultplan/data/.
+The config.json and vaultplan.db will be located inside ~/.vaultplan/ (config.json) and ~/.vaultplan/data/ (vaultplan.db).
 
-To update VaultPlan, simply re-run the install.sh to sync any changes.
+To update VaultPlan safely on a phone, run:
+
+vaultplan update
+
+This runs git pull and re-runs install.sh while preserving ~/.vaultplan/data/ and ~/.vaultplan/config.json.
 
 If you face permission issues on Termux, use chmod +x to ensure the vaultplan.py script is executable.
 

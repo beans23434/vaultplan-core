@@ -24,8 +24,8 @@ from typing import List, Dict, Any
 from utils.helpers import (
     get_db,
     get_token_prices,
-    get_config,
 )
+from utils.config import load_config
 
 from .fetch_normal import fetch_eth_transfers
 from .fetch_erc20 import fetch_token_transfers
@@ -51,11 +51,10 @@ def _ensure_tables(conn: sqlite3.Connection) -> None:
         """
         CREATE TABLE IF NOT EXISTS web3_transactions (
             date            TEXT,
-            type            TEXT,
+            tx_type         TEXT,
             symbol          TEXT,
             amount_token    REAL,
-            price_at_time   REAL,
-            value_aud       REAL,
+            value_fiat      REAL,
             account         TEXT,
             description     TEXT,
             hash            TEXT,
@@ -93,7 +92,7 @@ def _get_wallet_accounts() -> List[Dict[str, str]]:
 
 def web3_sync() -> None:
     """Synchronise all on‑file wallets across configured chains."""
-    cfg = get_config()
+    cfg = load_config()
     chains: List[int] = cfg.get("etherscan_chains", [1])  # default mainnet
 
     wallets = _get_wallet_accounts()
@@ -167,22 +166,21 @@ def _sync_single_wallet(
             # classify + enrich
             tx_type = "income" if (tx["symbol"] == "ETH" and tx["direction"] == "in") else "swap"
             price = prices.get(tx["symbol"], 0)
-            value_aud = tx["amount"] * price
+            value_fiat = tx["amount"] * price
 
             cur.execute(
                 """
                 INSERT OR IGNORE INTO web3_transactions
-                          (date, type, symbol, amount_token, price_at_time,
-                           value_aud, account, description, hash)
-                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+                          (date, tx_type, symbol, amount_token,
+                           value_fiat, account, description, hash)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?)
                 """,
                 (
                     tx["date"],
                     tx_type,
                     tx["symbol"],
                     tx["amount"],
-                    price,
-                    value_aud,
+                    value_fiat,
                     account_name,
                     f"{tx['symbol']} {tx_type} {tx['hash'][:8]}",
                     tx["hash"],

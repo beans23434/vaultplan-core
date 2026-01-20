@@ -1,6 +1,7 @@
 import typer
 import sqlite3
-from utils.db_init import DB_PATH
+
+from utils.paths import DB_PATH
 from rich.console import Console
 from rich.table import Table
 

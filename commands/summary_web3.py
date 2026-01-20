@@ -13,12 +13,12 @@ def summary_web3():
 
     # ── aggregate web3_transactions by type ──
     c.execute("""
-        SELECT type,
+        SELECT tx_type,
                COUNT(*) AS cnt,
-               SUM(value_aud) FILTER(WHERE type='income')  AS total_in_aud,
-               SUM(value_aud) FILTER(WHERE type='expense') AS total_out_aud
+               SUM(value_fiat) FILTER(WHERE tx_type='income')  AS total_in_fiat,
+               SUM(value_fiat) FILTER(WHERE tx_type='expense') AS total_out_fiat
         FROM web3_transactions
-        GROUP BY type
+        GROUP BY tx_type
     """)
     rows = c.fetchall()
     data = {r[0]: {"count": r[1], "sum_in": r[2] or 0, "sum_out": r[3] or 0} for r in rows}
@@ -39,7 +39,7 @@ def summary_web3():
 
     # ── Latest 5 transactions preview ──
     c.execute("""
-        SELECT date, type, symbol, amount_token, value_aud
+        SELECT date, tx_type, symbol, amount_token, value_fiat
         FROM web3_transactions
         ORDER BY date DESC
         LIMIT 5
